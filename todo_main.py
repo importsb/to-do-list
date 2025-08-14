@@ -1,6 +1,7 @@
 def main():
     """
-    declares task dict, gets task list, loads up dict, shows table, asks for completion, and shows table again
+    declares task dict, gets task list, loads up dict, shows table,
+    asks for completion, and shows table again
     """
     tasks = {}
     next_id = 1
@@ -11,7 +12,8 @@ def main():
     display_dict(tasks)
     task_complete_check(tasks)   # changes completed
     display_dict(tasks)
-
+    remove_from_dict(tasks)
+    display_dict(tasks)
 
 
 def user_input():
@@ -43,6 +45,18 @@ def add_to_dict(tasks, task_list, next_id):
         next_id += 1
     return next_id
 
+def remove_from_dict(tasks):
+    """
+    removes task from tasks dict using IDs
+    """
+    remove_task = prompt_int("ID to remove task:\n")
+    if remove_task is None:
+        return
+    if remove_task in tasks:
+        del tasks[remove_task]
+        print(f"removed {remove_task}.")
+    else:
+        print(f"No such task with that ID")
 
 def display_dict(tasks):
     """
@@ -61,7 +75,7 @@ def display_dict(tasks):
 
 def task_complete_check(tasks):
     """
-    asks y/n then asks for a ID and marks completed as True
+    asks Y/N then asks for an ID and marks completed as True
     """
     ans = input("Did you complete any tasks? Y/N\n").strip().lower()
     if ans not in {"y", "yes"}:
@@ -83,7 +97,7 @@ def task_complete_check(tasks):
 
 def prompt_int(msg):
     """
-    safe int prompt and returns int or None
+    safe int prompts and returns int or None
     """
     safeint = input(msg).strip()
     try:

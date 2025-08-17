@@ -1,4 +1,4 @@
-# to-do-list(wip)
+# to-do-list
 A Python command line todo list app. It supports adding, removing, listing, and marking tasks as complete. I built this to practice and learn Python basics(loops, dicts, functions, and cli flow).
 
 ## features
@@ -11,3 +11,15 @@ A Python command line todo list app. It supports adding, removing, listing, and 
 ## requirements
 - Python 3.x
 (No third party libraries used)
+
+## commands
+- Add "task name"
+  - Adds a new task
+- Remove <id #>
+  - Removes a task
+- List
+  - Shows all tasks
+- Completed <id #>
+  - Marks a task as completed
+- Exit
+  - Exits program
